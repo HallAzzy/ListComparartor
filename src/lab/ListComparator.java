@@ -2,7 +2,7 @@ package lab;
 
 import java.util.*;
 
-public final class ListComparator {
+public class ListComparator {
     private LinkedList<Integer> lL;
     private ArrayList<Integer> aL;
 
@@ -18,7 +18,7 @@ public final class ListComparator {
             lL.add(random.nextInt(1000));
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double addEvaluationAL(int amount) {
@@ -28,7 +28,7 @@ public final class ListComparator {
             aL.add(random.nextInt(1000));
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double getEvaluationLL() {
@@ -37,7 +37,7 @@ public final class ListComparator {
             lL.get(i);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double getEvaluationAL() {
@@ -46,7 +46,7 @@ public final class ListComparator {
             aL.get(i);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double containsEvaluationLL() {
@@ -55,7 +55,7 @@ public final class ListComparator {
             lL.contains(i);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double containsEvaluationAL() {
@@ -64,7 +64,7 @@ public final class ListComparator {
             aL.contains(i);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double removeEvaluationLL() {
@@ -73,7 +73,7 @@ public final class ListComparator {
             lL.remove(0);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     private double removeEvaluationAL() {
@@ -82,7 +82,7 @@ public final class ListComparator {
             aL.remove(0);
         }
         long end = System.nanoTime();
-        return end - start; // Время в наносекундах
+        return end - start;
     }
 
     public void compare(int amount) {
@@ -109,9 +109,4 @@ public final class ListComparator {
             "ArrayList", "remove", amount, removeEvaluationAL());
     }
 
-    public static void main(String[] args) {
-        ListComparator comparator = new ListComparator();
-        int operations = 1000; // Количество операций
-        comparator.compare(operations);
-    }
 }
